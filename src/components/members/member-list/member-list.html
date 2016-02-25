@@ -1,0 +1,9 @@
+<ul class="member-filters">
+  <li><a [class.active]="!filter" [routerLink]="['/Members']">View All</a></li>
+  <li><a [class.active]="filter == 'active'" [routerLink]="['/Members', {filter: 'active'}]">Active</a></li>
+  <li><a [class.active]="filter == 'checkedIn'" [routerLink]="['/Members', {filter: 'checkedIn'}]">Checked In</a></li>
+</ul>
+
+<div class="member-list">
+  <member-item [model]="member" *ngFor="#member of members | async | filterMembers:filter"></member-item>
+</div>

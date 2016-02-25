@@ -4,16 +4,16 @@
 "~minx/src/mixins";
 
 //===================================================================
-//  TASK-ITEM
+//  MEMBER-ITEM
 //===================================================================
 
-.task-item {
+.member-item {
   display: flex;
   outline: none;
   border-bottom: 1px dotted #666;
   height: 60px;
   overflow: hidden;
-  color: #fff;
+  color: #2a2a2a;
   font-size: rem(18px);
   font-weight: 300;
 
@@ -22,7 +22,7 @@
   }
 }
 
-.task-item--editing {
+.member-item--editing {
   border-bottom: 1px dotted #ccc;
 }
 
@@ -53,7 +53,7 @@
 //=====================================
 //  ICON BUTTONS
 //-------------------------------------
-.task-item__button {
+.member-item__button {
   @include button-base;
   margin-left: 5px;
   outline: none;
@@ -63,7 +63,7 @@
   width: 40px;
   height: 40px;
   overflow: hidden;
-  background: #2a2a2a;
+//   background: #2a2a2a;
   transform: translate(0, 0);
 
   &:first-child {
@@ -75,13 +75,13 @@
   line-height: 40px !important;
   color: #555;
 
-  .task-item__button:hover & {
+  .member-item__button:hover & {
     color: #999;
   }
 }
 
 .icon--active {
-  &, .task-item__button:hover & {
+  &, .member-item__button:hover & {
     color: #85bf6b;
   }
 }
@@ -100,7 +100,7 @@
   to { width: 100%; }
 }
 
-.task-item__title {
+.member-item__title {
   display: inline-block;
   position: relative;
   max-width: 100%;
@@ -120,19 +120,19 @@
     content: '';
   }
 
-  .task-item--completed & {
+  .member-item--checkedIn & {
     color: #666;
   }
 
-  .task-item--completed &:after {
+  .member-item--checkedIn &:after {
     width: 100%;
   }
 
-  .task-item--completed.task-item--status-updated & {
+  .member-item--checkedIn.member-item--status-updated & {
     animation: fade-title 120ms ease-in-out;
   }
 
-  .task-item--completed.task-item--status-updated &:after {
+  .member-item--checkedIn.member-item--status-updated &:after {
     animation: strike-title 180ms ease-in-out;
   }
 }
@@ -141,7 +141,7 @@
 //=====================================
 //  TITLE : INPUT
 //-------------------------------------
-.task-item__input {
+.member-item__input {
   outline: none;
   border: 0;
   padding: 0;

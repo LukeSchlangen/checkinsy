@@ -12,26 +12,26 @@ import {
 } from 'angular2/testing';
 /* tslint:enable:no-unused-variable */
 
-import { TaskService } from './task-service';
+import { MemberService } from './member-service';
 
 
-describe('TaskService', () => {
+describe('MemberService', () => {
   let firebaseRef;
-  let taskService;
+  let memberService;
 
   beforeEach(() => {
-    firebaseRef = new Firebase('tasks/github:123');
-    taskService = new TaskService(firebaseRef);
+    firebaseRef = new Firebase('members/github:123');
+    memberService = new MemberService(firebaseRef);
   });
 
-  describe('Creating a task', () => {
-    it('should push new task to firebase', (done: any) => {
+  describe('Creating a member', () => {
+    it('should push new member to firebase', (done: any) => {
       firebaseRef.on('child_added', (snapshot: FirebaseDataSnapshot) => {
         expect(snapshot.val().title).toEqual('test');
         done();
       });
 
-      taskService.createTask('test');
+      memberService.createMember('test');
       firebaseRef.flush();
     });
   });

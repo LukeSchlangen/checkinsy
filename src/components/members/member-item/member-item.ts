@@ -1,31 +1,31 @@
 import { Component, Input } from 'angular2/core';
-import { ITask } from 'core/task/task';
-import { TaskService } from 'core/task/task-service';
+import { IMember } from 'core/member/member';
+import { MemberService } from 'core/member/member-service';
 import { Autofocus } from 'directives/autofocus-directive';
 
-const styles: string = require('./task-item.scss');
-const template: string = require('./task-item.html');
+const styles: string = require('./member-item.scss');
+const template: string = require('./member-item.html');
 
 
 @Component({
   directives: [
     Autofocus
   ],
-  selector: 'task-item',
+  selector: 'member-item',
   styles: [styles],
   template
 })
 
-export class TaskItem {
-  @Input() model: ITask;
+export class MemberItem {
+  @Input() model: IMember;
 
   editing: boolean = false;
   title: string = '';
 
-  constructor(private taskService: TaskService) {}
+  constructor(private memberService: MemberService) {}
 
   delete(): void {
-    this.taskService.deleteTask(this.model);
+    this.memberService.deleteMember(this.model);
   }
 
   editTitle(): void {
@@ -37,7 +37,7 @@ export class TaskItem {
     if (this.editing) {
       const title: string = this.title.trim();
       if (title.length && title !== this.model.title) {
-        this.taskService.updateTask(this.model, {title});
+        this.memberService.updateMember(this.model, {title});
       }
       this.stopEditing();
     }
@@ -48,8 +48,8 @@ export class TaskItem {
   }
 
   toggleStatus(): void {
-    this.taskService.updateTask(this.model, {
-      completed: !this.model.completed
+    this.memberService.updateMember(this.model, {
+      checkedIn: !this.model.checkedIn
     });
   }
 }

@@ -12,16 +12,16 @@ import {
 } from 'angular2/testing';
 /* tslint:enable:no-unused-variable */
 
-import { TaskListFilterPipe } from './task-list-filter-pipe';
+import { MemberListFilterPipe } from './member-list-filter-pipe';
 
 
-describe('TaskListFilterPipe', () => {
-  let pipe: TaskListFilterPipe;
+describe('MemberListFilterPipe', () => {
+  let pipe: MemberListFilterPipe;
   let list: any[];
 
   beforeEach(() => {
-    list = [{completed: true}, {completed: false}];
-    pipe = new TaskListFilterPipe();
+    list = [{checkedIn: true}, {checkedIn: false}];
+    pipe = new MemberListFilterPipe();
   });
 
   it('should return provided list if param `filterType` is not provided', () => {
@@ -29,15 +29,15 @@ describe('TaskListFilterPipe', () => {
     expect(pipe.transform(list, [])).toBe(list);
   });
 
-  it('should return list of active tasks if param `filterType` is `active`', () => {
-    expect(pipe.transform(list, ['active'])).toEqual([{completed: false}]);
+  it('should return list of active members if param `filterType` is `active`', () => {
+    expect(pipe.transform(list, ['active'])).toEqual([{checkedIn: false}]);
   });
 
-  it('should return list of active tasks if param `filterType` is `completed`', () => {
-    expect(pipe.transform(list, ['completed'])).toEqual([{completed: true}]);
+  it('should return list of active members if param `filterType` is `checkedIn`', () => {
+    expect(pipe.transform(list, ['checkedIn'])).toEqual([{checkedIn: true}]);
   });
 
-  it('should return provided list if param `filterType` is not `active` or `completed`', () => {
+  it('should return provided list if param `filterType` is not `active` or `checkedIn`', () => {
     expect(pipe.transform(list, [''])).toBe(list);
   });
 

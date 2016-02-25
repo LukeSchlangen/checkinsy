@@ -1,12 +1,12 @@
-<form class="task-form" (ngSubmit)="submit()" novalidate>
+<form class="member-form" (ngSubmit)="submit()" novalidate>
   <input
     (keyup.escape)="clear()"
     ngControl="title"
     [(ngModel)]="title"
     autocomplete="off"
     autofocus
-    class="task-form__input"
-    placeholder="What needs to be done?"
+    class="member-form__input"
+    placeholder="Add a new member"
     required
     type="text">
 </form>

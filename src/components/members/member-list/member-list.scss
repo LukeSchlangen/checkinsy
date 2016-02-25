@@ -4,10 +4,10 @@
 "~minx/src/mixins";
 
 //===================================================================
-//  TASK-FILTERS
+//  MEMBER-FILTERS
 //===================================================================
 
-.task-filters {
+.member-filters {
   @include clearfix;
   margin-bottom: 45px;
   padding-left: 1px;
@@ -38,17 +38,17 @@
     text-decoration: none;
 
     &.active {
-      color: #fff;
+      color: #000;
     }
   }
 }
 
 
 //===================================================================
-//  TASK-LIST
+//  MEMBER-LIST
 //===================================================================
 
-.task-list {
+.member-list {
   border-top: 1px dotted #666;
 }
 

@@ -2,29 +2,29 @@ import { ChangeDetectionStrategy, Component, Input } from 'angular2/core';
 import { RouterLink, RouteParams } from 'angular2/router';
 import { List } from 'immutable';
 import { ReplaySubject } from 'rxjs/subject/ReplaySubject';
-import { TaskItem } from '../task-item/task-item';
-import { TaskListFilterPipe } from './task-list-filter-pipe';
+import { MemberItem } from '../member-item/member-item';
+import { MemberListFilterPipe } from './member-list-filter-pipe';
 
-const styles: string = require('./task-list.scss');
-const template: string = require('./task-list.html');
+const styles: string = require('./member-list.scss');
+const template: string = require('./member-list.html');
 
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   directives: [
     RouterLink,
-    TaskItem
+    MemberItem
   ],
   pipes: [
-    TaskListFilterPipe
+    MemberListFilterPipe
   ],
-  selector: 'task-list',
+  selector: 'member-list',
   styles: [styles],
   template
 })
 
-export class TaskList {
-  @Input() tasks: ReplaySubject<List<any>>;
+export class MemberList {
+  @Input() members: ReplaySubject<List<any>>;
 
   filter: string;
 

@@ -1,13 +1,13 @@
-export interface ITask {
-  completed: boolean;
+export interface IMember {
+  checkedIn: boolean;
   createdAt: number;
   key?: string;
   title: string;
 }
 
 
-export class Task implements ITask {
-  completed: boolean = false;
+export class Member implements IMember {
+  checkedIn: boolean = false;
   createdAt: number = Firebase.ServerValue.TIMESTAMP;
   title: string;
 

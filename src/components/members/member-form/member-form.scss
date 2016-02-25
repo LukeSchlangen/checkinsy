@@ -4,10 +4,10 @@
 "~minx/src/mixins";
 
 //===================================================================
-//  TASK-FORM
+//  MEMBER-FORM
 //===================================================================
 
-.task-form {
+.member-form {
   margin: 40px 0 10px;
 
   @include media-query(540) {
@@ -16,7 +16,7 @@
 }
 
 
-.task-form__input {
+.member-form__input {
   outline: none;
   border: 0;
   border-bottom: 1px dotted #666;
@@ -27,7 +27,7 @@
   font-family: inherit;
   font-size: rem(24px);
   font-weight: 300;
-  color: #fff;
+  color: #000;
   background: transparent;
 
   @include media-query(540) {
@@ -36,7 +36,7 @@
   }
 
   &::placeholder {
-    color: #999;
+    color: #000;
     opacity: 1; // firefox native placeholder style has opacity < 1
   }
 

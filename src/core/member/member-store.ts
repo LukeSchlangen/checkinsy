@@ -1,10 +1,10 @@
 import { List } from 'immutable';
 import { ReplaySubject } from 'rxjs/subject/ReplaySubject';
-import { ITask } from './task';
+import { IMember } from './member';
 
 
-export class TaskStore {
-  tasks: ReplaySubject<List<any>> = new ReplaySubject(1);
+export class MemberStore {
+  members: ReplaySubject<List<any>> = new ReplaySubject(1);
   private list: List<any> = List();
 
   constructor(ref: Firebase) {
@@ -19,16 +19,16 @@ export class TaskStore {
   }
 
   private emit(): void {
-    this.tasks.next(this.list);
+    this.members.next(this.list);
   }
 
   private created(snapshot: FirebaseDataSnapshot): void {
     let key: string = snapshot.key();
     let index: number = this.findIndex(key);
     if (index === -1) {
-      let task: ITask = snapshot.val();
-      task.key = key;
-      this.list = this.list.push(task);
+      let member: IMember = snapshot.val();
+      member.key = key;
+      this.list = this.list.push(member);
       this.emit();
     }
   }
@@ -45,16 +45,16 @@ export class TaskStore {
     let key: string = snapshot.key();
     let index: number = this.findIndex(key);
     if (index !== -1) {
-      let task: ITask = snapshot.val();
-      task.key = key;
-      this.list = this.list.set(index, task);
+      let member: IMember = snapshot.val();
+      member.key = key;
+      this.list = this.list.set(index, member);
       this.emit();
     }
   }
 
   private findIndex(key: string): number {
-    return this.list.findIndex((task: ITask) => {
-      return task.key === key;
+    return this.list.findIndex((member: IMember) => {
+      return member.key === key;
     });
   }
 }

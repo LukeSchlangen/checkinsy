@@ -12,25 +12,25 @@ import {
 } from 'angular2/testing';
 /* tslint:enable:no-unused-variable */
 
-import { Task } from './task';
+import { Member } from './member';
 
 
-describe('Task', () => {
-  let task: Task;
+describe('Member', () => {
+  let member: Member;
 
   beforeEach(() => {
-    task = new Task('test');
+    member = new Member('test');
   });
 
   it('should set title with provided `title` param', () => {
-    expect(task.title).toBe('test');
+    expect(member.title).toBe('test');
   });
 
-  it('should set `completed` to `false`', () => {
-    expect(task.completed).toBe(false);
+  it('should set `checkedIn` to `false`', () => {
+    expect(member.checkedIn).toBe(false);
   });
 
   it('should set `createdAt` to firebase timestamp placeholder', () => {
-    expect(task.createdAt).toEqual(Firebase.ServerValue.TIMESTAMP);
+    expect(member.createdAt).toEqual(Firebase.ServerValue.TIMESTAMP);
   });
 });
