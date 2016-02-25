@@ -1,7 +1,7 @@
 <ul class="member-filters">
-  <li><a [class.active]="!filter" [routerLink]="['/Members']">View All</a></li>
-  <li><a [class.active]="filter == 'active'" [routerLink]="['/Members', {filter: 'active'}]">Active</a></li>
-  <li><a [class.active]="filter == 'checkedIn'" [routerLink]="['/Members', {filter: 'checkedIn'}]">Checked In</a></li>
+  <li><a [class.checkedOut]="!filter" [routerLink]="['/Members']">View All</a></li>
+  <li><a [class.checkedOut]="filter == 'checkedOut'" [routerLink]="['/Members', {filter: 'checkedOut'}]">Checked Out</a></li>
+  <li><a [class.checkedOut]="filter == 'checkedIn'" [routerLink]="['/Members', {filter: 'checkedIn'}]">Checked In</a></li>
 </ul>
 
 <div class="member-list">

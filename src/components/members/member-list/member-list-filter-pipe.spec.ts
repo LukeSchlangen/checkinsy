@@ -29,20 +29,20 @@ describe('MemberListFilterPipe', () => {
     expect(pipe.transform(list, [])).toBe(list);
   });
 
-  it('should return list of active members if param `filterType` is `active`', () => {
-    expect(pipe.transform(list, ['active'])).toEqual([{checkedIn: false}]);
+  it('should return list of checkedOut members if param `filterType` is `checkedOut`', () => {
+    expect(pipe.transform(list, ['checkedOut'])).toEqual([{checkedIn: false}]);
   });
 
-  it('should return list of active members if param `filterType` is `checkedIn`', () => {
+  it('should return list of checkedOut members if param `filterType` is `checkedIn`', () => {
     expect(pipe.transform(list, ['checkedIn'])).toEqual([{checkedIn: true}]);
   });
 
-  it('should return provided list if param `filterType` is not `active` or `checkedIn`', () => {
+  it('should return provided list if param `filterType` is not `checkedOut` or `checkedIn`', () => {
     expect(pipe.transform(list, [''])).toBe(list);
   });
 
   it('should return provided list if list is undefined and filter is provided', () => {
     list = undefined;
-    expect(pipe.transform(list, ['active'])).toBe(list);
+    expect(pipe.transform(list, ['checkedOut'])).toBe(list);
   });
 });

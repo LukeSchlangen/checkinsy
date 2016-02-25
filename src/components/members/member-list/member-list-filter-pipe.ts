@@ -14,7 +14,7 @@ export class MemberListFilterPipe implements PipeTransform {
     }
 
     switch (filterType[0]) {
-      case 'active':
+      case 'checkedOut':
         return list.filter((member: IMember) => {
           return !member.checkedIn;
         });
