@@ -16,7 +16,7 @@
 
 
 .header__title {
-  @include fa-icon(circle-o);
+  @include fa-icon(check);
   float: left;
   font-size: rem(14px);
   font-weight: 400;
