@@ -1,7 +1,7 @@
 {
   "name": "Checkinsy",
   "version": "0.4.3",
-  "description": "Check in system based on r-park/angular2-firebase",
+  "description": "Check in system based on r-park/angular2-firebase to-do list",
   "homepage": "https://github.com/lukeschlangen/checkinsy",
   "repository": "https://github.com/lukeschlangen/checkinsy.git",
   "author": {
