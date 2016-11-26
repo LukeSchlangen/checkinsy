@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/r-park/todo-angular2-firebase.svg?branch=master)](https://travis-ci.org/r-park/todo-angular2-firebase)
 
 
-# Chekc In System app with Angular 2 and Firebase
+# Check In System app with Angular 2 and Firebase
 A simple Check In System app based on <a href="https://github.com/r-park">Robert Park's</a> to-do example built with **Angular 2**. The app features a **Firebase** backend with **OAuth** authentication. Try the demo at <a href="https://checkinsy.com" target="_blank">checkinsy.firebaseapp.com</a>, and check out the <a href="https://github.com/r-park/todo-angular2-firebase" target="_blank">to-do app</a> or <a href="https://github.com/r-park/angular2-webpack-seed" target="_blank">webpack seed</a> this project is based on.
 
 - Angular
